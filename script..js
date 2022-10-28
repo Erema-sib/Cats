@@ -261,3 +261,33 @@ function seeCats() {
 seeCats();
 
 
+//Cookie
+localStorage.setItem("API", JSON.stringify(api));
+
+if(!Cookies.get('user')) {
+    let popupBack = document.createElement("div");
+    popupBack.className = 'popup-back';
+    document.body.append(popupBack);
+    let auth = document.createElement("div");
+    auth.className = "authContent";
+    auth.innerHTML = `<form name="auth-form" class="auth-form">
+    <input type="text" name="authName" class="auth-form__input" placeholder="Введите логин">
+    <button type="submit" class="auth-form__button">Войти</button>
+    </form>`;
+
+    document.body.append(auth);
+
+    let authNameInput = document.querySelector(".auth-form__input")
+    document.querySelector(".auth-form").addEventListener('submit', (e)=> {
+        e.preventDefault();
+        if (authNameInput.value.trim() !== ""){
+            console.log(authNameInput.value)
+            document.cookie = `user=${authNameInput.value}; path=/; secure; samesite=lax;`;
+            popupBack.remove();
+            auth.remove();
+
+        }
+    }
+    )
+
+};
