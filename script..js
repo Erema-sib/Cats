@@ -58,13 +58,16 @@ let addCatPopup = function () {
     document.body.append(popupBack);
     popupAddCat.innerHTML = `
             <form class="popup-form">
+            <div>
+            <h2 class="text_popup">Добавьте нового котика</h2>
+            </div>
                 <input type="text" placeholder="id" name="id" id="id">
                 <input type="text" placeholder="Имя" name="name" id="name">
-                <input type="text" placeholder="Изображение" name="img_link" id="img_link">
+                <input type="text" placeholder="Изображение URL" name="img_link" id="img_link">
                 <input type="text" placeholder="Описание" name="description" id="description">
                 <input type="text" placeholder="Рейтинг" name="rate" id="rate">
                 <input type="text" placeholder="Возраст" name="age" id="age">
-                <button type="submit">Отправить</button>
+                <button type="submit">Добавить</button>
             </form>`;
     let popupForm = popupAddCat.querySelector(".popup-form");
 
@@ -131,28 +134,7 @@ if(localStorage.getItem('cats'===false)){
     seeCats();
 }
 
-// Открытие всплывающего окна
-/*let openModulWin = function (cat) {
-    let popup = document.createElement("div");
-    popup.classList.add("popup");
-    let popupBack = document.createElement("div");
-    popupBack.className = 'popup-back';
-    document.body.append(popupBack);
-    popup.innerHTML = `<img class="popupImg" src="${cat.img_link}">
-    <h2 class="nameCat">${cat.name}</h2>
-        <p class="ageCat">${cat.age} ${ageCatNormal(cat.age)}</p>
-        <p class="descriptionCat">${cat.description}</p>`;
-    document.body.append(popup);
-    
-    let popupClose = document.createElement("div");
-    popupClose.className = 'popupclose'
-
-    popupClose.innerHTML = `<img class="imgclose" src="img/Error.png"></img>`;
-    popup.append(popupClose);
-    popupClose.setAttribute("onclick", "document.querySelector('.popup').remove(), document.querySelector('.popup-back').remove()");*/
-
-
-    let openModulWin = function (cat) {
+let openModulWin = function (cat) {
         let popup = document.createElement("div");
         popup.classList.add("popup");
         let popupBack = document.createElement("div");
@@ -167,7 +149,9 @@ if(localStorage.getItem('cats'===false)){
             <p class="ageCat">${cat.age} ${ageCatNormal(cat.age)}</p>
             <p class="descriptionCat">${cat.description}</p>
             <button class="editButton">Редактировать</button>
-        `;
+            <button class="delete-cat" onclick='deleteCatButtonFun(${cat.id})'>Удалить</button>`;
+        
+        
         popup.append(popupInfo);
         let popupClose = document.createElement("div");
         popupClose.className = 'popupclose'
@@ -175,10 +159,9 @@ if(localStorage.getItem('cats'===false)){
         popupClose.innerHTML = `<img class="imgclose" src="img/Error.png"></img>`;
         popupInfo.append(popupClose);
         popupClose.setAttribute("onclick", "document.querySelector('.popup').remove(), document.querySelector('.popup-back').remove()");
-    
-    
-    
-    popupInfo.querySelector(".editButton").addEventListener("click", ()=>{
+
+        
+        popupInfo.querySelector(".editButton").addEventListener("click", ()=>{
         let editCat = document.createElement("div");
         editCat.className = "edit-cat__popup";
         editCat.innerHTML = `
@@ -261,8 +244,10 @@ function seeCats() {
 seeCats();
 
 
-//Cookie
+// Cookie
+
 localStorage.setItem("API", JSON.stringify(api));
+
 
 if(!Cookies.get('user')) {
     let popupBack = document.createElement("div");
@@ -271,7 +256,9 @@ if(!Cookies.get('user')) {
     let auth = document.createElement("div");
     auth.className = "authContent";
     auth.innerHTML = `<form name="auth-form" class="auth-form">
+    <h2 class="text_auth">Пройдите авторизацию</h2>
     <input type="text" name="authName" class="auth-form__input" placeholder="Введите логин">
+    <input type="text" name="authPassword" class="auth-form__input" placeholder="Введите пароль">
     <button type="submit" class="auth-form__button">Войти</button>
     </form>`;
 
