@@ -152,7 +152,7 @@ body {
 }
 
 .popup_add-cat {
-  background-image: url(/img/screen-5.jpg);
+  background-image: url(img/screen-5.jpg);
   background-size: cover;
   position: fixed;
   left: 30%;
@@ -188,7 +188,7 @@ body {
 }
 
 .popup {
-  background-image: url(/img/1619226990_21-phonoteka_org-p-nezhno-serii-fon-21.jpg);
+  background-image: url(img/1619226990_21-phonoteka_org-p-nezhno-serii-fon-21.jpg);
   background-size: cover;
   position: fixed;
   top: 5%;
