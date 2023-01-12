@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'Veles';
-  src: url('./fonts/Veles/Veles-Bold.0.9.2.otf');
+  font-family: "Veles";
+  src: url("./fonts/Veles/Veles-Bold.0.9.2.otf");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
 
 .cont-header {
   display: flex;
@@ -14,8 +13,8 @@
   justify-content: space-between;
   height: 90px;
   box-shadow: 0 0 3px 0 rgb(0, 0, 6);
-  background: -webkit-linear-gradient(90deg,#edefee,#c9c9c9); 
-  background: linear-gradient(90deg,#edefee,#c9c9c9); 
+  background: -webkit-linear-gradient(90deg, #edefee, #c9c9c9);
+  background: linear-gradient(90deg, #edefee, #c9c9c9);
   position: relative;
 }
 
@@ -27,28 +26,27 @@
 }
 
 .logotitle {
-    font-family:'Open Sans', sans-serif;
-    font-style: italic;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 4px 2px 3px rgb(201, 161, 228);
-    position: absolute;
-    left: 115px;
-    
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 4px 2px 3px rgb(201, 161, 228);
+  position: absolute;
+  left: 115px;
 }
-
 
 body {
   margin: 0;
   display: grid;
-  background-image: url(img/1619226990_21-phonoteka_org-p-nezhno-serii-fon-21.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 97%;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.buttons-up{
+.buttons-up {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   padding: 50px calc(50% - 500px);
@@ -73,7 +71,7 @@ body {
   right: 15px;
 }
 
-.addCat:hover  {
+.addCat:hover {
   background-color: #fff;
 }
 
@@ -81,7 +79,7 @@ body {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
@@ -93,12 +91,14 @@ body {
 
 .cards {
   display: grid;
+  background-image: url(img/1619226990_21-phonoteka_org-p-nezhno-serii-fon-21.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
-  margin-top: 5px;
   gap: 50px;
   padding: 50px calc(50% - 500px);
   justify-items: center;
-   
+  flex: 1;
 }
 
 .card {
@@ -115,8 +115,8 @@ body {
   border: 1px solid grey;
 }
 
-  .card h3 {
-  font-family: 'Open Sans', sans-serif;
+.card h3 {
+  font-family: "Open Sans", sans-serif;
   font-size: 27px;
   font-style: italic;
 }
@@ -135,21 +135,21 @@ body {
 
 .imgcat:hover {
   transform: scale(1.1);
-  transition: 1.0s;
+  transition: 1s;
   border: none;
 }
 
-
 .addCat:hover {
   cursor: pointer;
-  transform:  scale(1.05);
+  transform: scale(1.05);
   transition: 0.2s linear;
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card:hover {
   transform: translate(30px, -30px);
   transition: 0.5s linear;
-  box-shadow: 0 14px 28px rgb(201, 161, 228), 0 10px 10px  rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgb(201, 161, 228), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .popup_add-cat {
@@ -221,7 +221,6 @@ body {
   }
 }
 
-
 .popupImg {
   width: 300px;
   object-fit: cover;
@@ -239,7 +238,7 @@ body {
 }
 
 .descriptionCat {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   font-size: 20px;
   margin: 0;
 }
@@ -256,7 +255,6 @@ body {
   width: 30px;
   height: 30px;
   cursor: pointer;
-
 }
 .popupclose {
   position: fixed;
@@ -272,12 +270,11 @@ body {
   align-items: center;
   box-shadow: 0 0 5px 0 #0006;
   background-color: rgba(0, 0, 0, 0.34);
-  height: 51px;
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .footertext {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   margin-left: 50px;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -294,14 +291,14 @@ body {
 
 .text_popup {
   margin-left: 17px;
-  font-family: 'Open Sans'
+  font-family: "Open Sans";
 }
 
 .rate {
   height: 60px;
   width: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1px;
   justify-content: center;
   margin: 0;
@@ -313,11 +310,11 @@ body {
 }
 
 .rate img:hover {
-  -webkit-filter: sepia(1) hue-rotate(320deg) saturate(10); 
-  filter: sepia(1) hue-rotate(320deg) saturate(10); 
+  -webkit-filter: sepia(1) hue-rotate(320deg) saturate(10);
+  filter: sepia(1) hue-rotate(320deg) saturate(10);
   cursor: pointer;
   transform: scale(1.3);
-  transition: .8s;
+  transition: 0.8s;
 }
 
 input {
@@ -325,20 +322,20 @@ input {
   height: 30px;
   border-radius: 12px;
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: italic;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 input:focus {
   outline: none;
-  transform:  scale(1.05);
+  transform: scale(1.05);
   transition: 0.2s linear;
 }
 
-
-
-.auth-form__button, .editButton, .popup-form button,
+.auth-form__button,
+.editButton,
+.popup-form button,
 .delete-cat {
   padding: 6px;
   border-radius: 10px;
@@ -347,23 +344,23 @@ input:focus {
   background-color: rgb(201, 161, 228);
   box-shadow: 0 0 5px 0 #000;
   font-size: 16px;
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
 }
 
-
- 
-.auth-form__button:hover, 
-.editButton:hover, .popup-form button:hover,
+.auth-form__button:hover,
+.editButton:hover,
+.popup-form button:hover,
 .delete-cat:hover {
-  transform:  scale(1.05);
+  transform: scale(1.05);
   transition: 0.2s linear;
   cursor: pointer;
 }
 
-
-.auth-form__button:active, .editButton:active, 
-.popup-form button:active, .delete-cat:active {
-  transform:  scale(1);
+.auth-form__button:active,
+.editButton:active,
+.popup-form button:active,
+.delete-cat:active {
+  transform: scale(1);
   transition: 0.1s linear;
   cursor: pointer;
 }
@@ -385,25 +382,24 @@ input:focus {
 }
 
 .auth-form__input {
-margin-right: 5px;
-width: 300px;
-cursor: pointer;
+  margin-right: 5px;
+  width: 300px;
+  cursor: pointer;
 }
 
-.popup-back{
+.popup-back {
   background-color: white;
-
 }
 .popup-back::before {
-  content: '';
-	background-color: white;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.5;
-	z-index: 10;
+  content: "";
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 10;
 }
 
 .auth-form {
@@ -416,7 +412,7 @@ cursor: pointer;
 .text_auth {
   display: flex;
   justify-content: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 22px;
   padding-right: 12px;
 }
@@ -424,7 +420,3 @@ cursor: pointer;
 .delete-cat {
   width: 125px;
 }
-
-
-
-

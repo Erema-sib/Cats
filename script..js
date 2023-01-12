@@ -46,10 +46,10 @@ let ageCatNormal = function (age) {
     else { return "лет" }
 };
 
-let addCatButton = document.querySelector(".addCat");
-
 
 // Добавление нового кота
+let addCatButton = document.querySelector(".addCat");
+
 let addCatPopup = function () {
     let popupAddCat = document.createElement("div");
     popupAddCat.className = "popup_add-cat";
